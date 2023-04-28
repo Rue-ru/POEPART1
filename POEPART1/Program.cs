@@ -84,6 +84,7 @@ namespace POE_part1
 
             if (option == 1)
             {
+                Console.ForegroundColor = ConsoleColor.Blue;
                 for(int i = 0; i < noOfIngredients; i++)
                 {
                     Console.WriteLine(ingredientName[i] + " " + quantity[i] + " " + recipeUnitsofMeasure[i]);
@@ -96,6 +97,7 @@ namespace POE_part1
                     Console.WriteLine("\n METHOD");
                     Console.WriteLine(description[b]);
                 }
+                Console.ResetColor();
             }
             else if (option == 2)
             {
