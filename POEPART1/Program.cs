@@ -55,9 +55,18 @@ namespace POE_part1
                 Console.WriteLine("Looking at the list provided above, type out the quantity you want to use");
                 recipeUnitsofMeasure[i] = Console.ReadLine();
             }
-            Steps();
-            Display();
-            Adjust();
+
+            int menu;
+            Console.WriteLine("1 --> Menu");
+            Console.WriteLine("2 --> Exit");
+            menu = Convert.ToInt32(Console.ReadLine());
+            while (menu <1)
+            {
+                Steps();
+                Display();
+                Adjust();
+            }
+            
         }
 
         public static void Steps()
