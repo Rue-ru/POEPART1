@@ -111,16 +111,16 @@ namespace POE_part1
         public static void Steps()
         {
             int recipeSteps;
-            string description;
 
             Console.WriteLine("Enter the number of steps you would like to add");
             recipeSteps = Convert.ToInt32(Console.ReadLine());
 
+            String [] description = new String[recipeSteps];
+
             for (int b = 0; b < recipeSteps; b++)
             {
                 Console.WriteLine("Step {0}", b + 1);
-
-                string steps = Console.ReadLine();
+                description[b] = Console.ReadLine();
             }
 
             Console.ReadKey();
