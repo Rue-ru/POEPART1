@@ -51,43 +51,56 @@ namespace POE_part1
                     //switch output will be based on users choice of measurement 
                 {
                     case 1:
-                        Console.WriteLine("1.tsp");
+                        Console.WriteLine("tsp");
+
                         break;
                     case 2:
-                        Console.WriteLine("2.Tbsp");
+                        Console.WriteLine("Tbsp");
                         break;
                     case 3:
-                        Console.WriteLine("3. Gram");
+                        Console.WriteLine("Gram");
                         break;
                     case 4:
-                        Console.WriteLine("4.  Kilogram ");
+                        Console.WriteLine(" Kilogram ");
                         break;
                     case 5:
-                        Console.WriteLine("5. Cup");
+                        Console.WriteLine("Cup");
                         break;
                     case 6:
-                        Console.WriteLine("6. Millilitre ");
+                        Console.WriteLine("Millilitre ");
                         break;
                     case 7:
-                        Console.WriteLine("7. Litre");
+                        Console.WriteLine("Litre");
                         break;
                     case 8:
-                        Console.WriteLine("8. Quart");
+                        Console.WriteLine("Quart");
                         break;
                     case 9:
-                        Console.WriteLine("9. Pint");
+                        Console.WriteLine("Pint");
                         break;
                     case 10:
-                        Console.WriteLine("10. Fl oz ");
+                        Console.WriteLine("Fl oz ");
                         break;
                     case 11:
-                        Console.WriteLine("11. Ounce");
+                        Console.WriteLine("Ounce");
                         break;
                     case 12:
-                        Console.WriteLine("12, Gal");
+                        Console.WriteLine("Gal");
                         break;
                     case 13:
-                        Console.WriteLine("13. Pound");
+                        Console.WriteLine("Pound");
+                        break;
+                    case 14:
+                        Console.WriteLine("Slices");
+                        break;
+                    case 15:
+                        Console.WriteLine("Diced");
+                        break;
+                    case 16:
+                        Console.WriteLine("Large");
+                        break;  
+                    case 17:
+                        Console.WriteLine("Small");
                         break;
                 }
                 
