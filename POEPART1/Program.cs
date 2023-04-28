@@ -112,7 +112,8 @@ namespace POE_part1
                         Console.WriteLine(quantity[i] + "Small");
                         break;
 
-
+                        Steps();
+                        Display();
 
                 }
             }
