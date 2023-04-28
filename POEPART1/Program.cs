@@ -6,12 +6,12 @@ namespace POE_part1
     
     public class Program
     {
-
+       public static int recipeSteps;
        public static int noOfIngredients;
-
-       public static String[] ingredientName = new string[noOfIngredients];
-       public static int[] quantity = new int[noOfIngredients];
-       public static int[] recipeUnitsofMeasure = new int[noOfIngredients];
+       public static String[] ingredientName;
+       public static int[] quantity;
+       public static int[] recipeUnitsofMeasure;
+       public static  String [] description = new String[recipeSteps];
 
         static void Main(string[] args)
         {
@@ -21,12 +21,18 @@ namespace POE_part1
             for (int i = 0; i < noOfIngredients; i++)
             {
 
+                ingredientName = new string[noOfIngredients];
                 Console.WriteLine("Enter the ingredients name with capital letters");
                 //enter the ingredients you want 
                 ingredientName[i] = Console.ReadLine();
 
+
+                quantity = new int[noOfIngredients];
+                Console.WriteLine();
                 Console.WriteLine("Enter the ingredients quantity");
                 quantity[i] = Convert.ToInt32(Console.ReadLine());
+
+
 
                 Console.WriteLine("1. Tsp");
                 Console.WriteLine("2. Tbsp");
@@ -47,6 +53,7 @@ namespace POE_part1
                 Console.WriteLine("17. Small");
                 Console.WriteLine();
 
+                recipeUnitsofMeasure = new int[noOfIngredients];
                 Console.WriteLine("Select from the list below to add the measuring units the ingreadient needs");
                 recipeUnitsofMeasure[i] = Convert.ToInt32(Console.ReadLine());
 
@@ -54,93 +61,116 @@ namespace POE_part1
                 //switch output will be based on users choice of measurement 
                 {
                     case 1:
-                        Console.WriteLine(quantity + "tsp");
+                        Console.WriteLine(quantity[i] + "tsp");
                         break;
                     case 2:
-                        Console.WriteLine(quantity + "Tbsp");
+                        Console.WriteLine(quantity[i] + "Tbsp");
                         break;
                     case 3:
-                        Console.WriteLine(quantity + "Gram");
+                        Console.WriteLine(quantity[i] + "Gram");
                         break;
                     case 4:
-                        Console.WriteLine(quantity + "Kilogram ");
+                        Console.WriteLine(quantity[i] + "Kilogram ");
                         break;
                     case 5:
-                        Console.WriteLine(quantity + "Cup");
+                        Console.WriteLine(quantity[i] + "Cup");
                         break;
                     case 6:
-                        Console.WriteLine(quantity + "Millilitre ");
+                        Console.WriteLine(quantity[i] + "Millilitre ");
                         break;
                     case 7:
-                        Console.WriteLine(quantity + "Litre");
+                        Console.WriteLine(quantity[i] + "Litre");
                         break;
                     case 8:
-                        Console.WriteLine(quantity + "Quart");
+                        Console.WriteLine(quantity[i] + "Quart");
                         break;
                     case 9:
-                        Console.WriteLine(quantity + "Pint");
+                        Console.WriteLine(quantity[i] + "Pint");
                         break;
                     case 10:
-                        Console.WriteLine(quantity + "Fl oz ");
+                        Console.WriteLine(quantity[i] + "Fl oz ");
                         break;
                     case 11:
-                        Console.WriteLine(quantity + "Ounce");
+                        Console.WriteLine(quantity[i] + "Ounce");
                         break;
                     case 12:
-                        Console.WriteLine(quantity + "Gal");
+                        Console.WriteLine(quantity[i] + "Gal");
                         break;
                     case 13:
-                        Console.WriteLine(quantity + "Pound");
+                        Console.WriteLine(quantity[i] + "Pound");
                         break;
                     case 14:
-                        Console.WriteLine(quantity + "Slices");
+                        Console.WriteLine(quantity[i] + "Slices");
                         break;
                     case 15:
-                        Console.WriteLine(quantity + "Diced");
+                        Console.WriteLine(quantity[i] + "Diced");
                         break;
                     case 16:
-                        Console.WriteLine(quantity + "Large");
+                        Console.WriteLine(quantity[i] + "Large");
                         break;
                     case 17:
-                        Console.WriteLine(quantity + "Small");
+                        Console.WriteLine(quantity[i] + "Small");
                         break;
+
+
+
                 }
             }
+        }
 
-            int recipeSteps;
-            Console.WriteLine("Enter the number of steps you would like to add");  
-            recipeSteps = Convert.ToInt32(Console.ReadLine());  
-            
-            String [] description = new String[recipeSteps];
+        public static void Steps()
+        {
+            Console.WriteLine("Enter the number of steps you would like to add");
+            recipeSteps = Convert.ToInt32(Console.ReadLine());
+
+            description = new String[recipeSteps];
+
             for (int b = 0; b < recipeSteps; b++)
             {
                 Console.WriteLine("Step {0}", b + 1);
                 description[b] = Console.ReadLine();
             }
-            
+
+        }
+        public static void Display()
+
+        {
             int option;
-                Console.WriteLine("Would you like display the entire recipe or clear the entire recipe out:");
-                Console.WriteLine("1 --> Display");
-                Console.WriteLine("2 --> Clear recipe");
-                 option = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Would you like display the entire recipe or clear the entire recipe out:");
+            Console.WriteLine("1 --> Display");
+            Console.WriteLine("2 --> Clear recipe");
+            option = Convert.ToInt32(Console.ReadLine());
 
             if (option == 1)
             {
+                for(int i = 0; i < noOfIngredients; i++)
+                {
+                    Console.WriteLine(ingredientName[i] + " " + quantity[i] + " " + recipeUnitsofMeasure[i]);
+                }
 
+                for (int b = 0; b < recipeSteps; b++)
+                {
+                    Console.WriteLine("Step {0}", b + 1);
+                    Console.WriteLine(description[b]);
+                }
             }
             else if (option == 2)
             {
 
-                Array.Clear();
 
             }
-            
-            
+
+
             Console.ReadKey();
+        }
 
+        public static void Adjust()
+        {
 
+        }
             
 
-        } 
-    }
+        
+    } 
+    
 }
