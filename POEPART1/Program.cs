@@ -41,8 +41,10 @@ namespace POE_part1
                 Console.WriteLine("12, Gal");
                 Console.WriteLine("13. Pound");
                 Console.WriteLine("14. Slices");
-                Console.WriteLine("15. Large");
-                Console.WriteLine("16. Small");
+                Console.WriteLine("15. Diced");
+                Console.WriteLine("16. Large");
+                Console.WriteLine("17. Small");
+
                 recipeUnitsofMeasure = Convert.ToInt32(Console.ReadLine());
 
                 switch(recipeUnitsofMeasure)
