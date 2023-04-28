@@ -9,7 +9,7 @@ namespace POE_part1
             int noOfIngredients;
             String ingredientName;
             int quantity;
-            string recipeUnitsofMeasure;
+            int recipeUnitsofMeasure;
             int recipeSteps;
             string description;
 
@@ -26,8 +26,53 @@ namespace POE_part1
                 Console.WriteLine("Enter the ingredients quantity");
                 quantity = Convert.ToInt32(Console.ReadLine());
 
-                Console.WriteLine("Enter the unit of measurement");
-                recipeUnitsofMeasure = Console.ReadLine();
+                Console.WriteLine("Select from the list below to add the measuring units");
+                recipeUnitsofMeasure = Convert.ToInt32(Console.ReadLine());
+
+                switch()
+                {
+                    case 1:
+                        Console.WriteLine("1. tsp");
+                        break;
+                    case 2:
+                        Console.WriteLine("2.Tbsp");
+                        break;
+                    case 3:
+                        Console.WriteLine("3. Gram");
+                        break;
+                    case 4:
+                        Console.WriteLine("4.  Kilogram ");
+                        break;
+                    case 5:
+                        Console.WriteLine("5. Cup");
+                        break;
+                    case 6:
+                        Console.WriteLine("6. Millilitre ");
+                        break;
+                    case 7:
+                        Console.WriteLine("7. Litre");
+                        break;
+                    case 8:
+                        Console.WriteLine("8. Quart");
+                        break;
+                    case 9:
+                        Console.WriteLine("9. Pint");
+                        break;
+                    case 10:
+                        Console.WriteLine("10. Fl oz ");
+                        break;
+                    case 11:
+                        Console.WriteLine("11. Ounce");
+                        break;
+                    case 12:
+                        Console.WriteLine("12, Gal");
+                        break;
+                    case 13:
+                        Console.WriteLine("13. Pound");
+                        break;
+                }
+                
+
 
             }
 
@@ -36,7 +81,7 @@ namespace POE_part1
 
             for (int b = 0; b < recipeSteps; b++)
             {
-                Console.WriteLine("Please enter your steps");
+                Console.WriteLine("Please enter your steps one by one in order");
                 string steps = Console.ReadLine();
             }
         }
