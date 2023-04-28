@@ -15,7 +15,7 @@ namespace POE_part1
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter the number of ingredients you would like to enter");
+            Console.WriteLine("\n Enter the number of ingredients you would like to enter");
             noOfIngredients = Convert.ToInt32(Console.ReadLine());
 
             for (int i = 0; i < noOfIngredients; i++)
@@ -31,8 +31,6 @@ namespace POE_part1
                 Console.WriteLine();
                 Console.WriteLine("Enter the ingredients quantity");
                 quantity[i] = Convert.ToInt32(Console.ReadLine());
-
-
 
                 Console.WriteLine("1. Tsp");
                 Console.WriteLine("2. Tbsp");
@@ -63,7 +61,7 @@ namespace POE_part1
 
         public static void Steps()
         {
-            Console.WriteLine("Enter the number of steps you would like to add");
+            Console.WriteLine("\n Enter the number of steps you would like to add");
             recipeSteps = Convert.ToInt32(Console.ReadLine());
 
             description = new String[recipeSteps];
@@ -93,7 +91,9 @@ namespace POE_part1
 
                 for (int b = 0; b < recipeSteps; b++)
                 {
-                    Console.WriteLine("Step {0}", b + 1);
+                    Console.WriteLine("INGREDIENTS");    
+                    Console.WriteLine("Step {0}", b);
+                    Console.WriteLine("\n METHOD");
                     Console.WriteLine(description[b]);
                 }
             }
@@ -103,16 +103,43 @@ namespace POE_part1
 
             }
 
-
             Console.ReadKey();
         }
 
         public static void Adjust()
         {
+            int option2;
+            Console.WriteLine("Would you like half, double or triple the recipe incredients ");
+            Console.WriteLine("1 --> half");
+            Console.WriteLine("2 --> double");
+            Console.WriteLine("3 --> triple");
+            option2 = Convert.ToInt32(Console.ReadLine());
 
+            if (option2 == 1)
+            {
+                for (int i = 0; i < noOfIngredients; i++)
+                {
+                    Console.WriteLine(ingredientName[i] + " " + quantity[i]/0.5 + " " + recipeUnitsofMeasure[i]);
+                }
+
+            }
+            else if (option2 == 2)
+            {
+                for (int i = 0; i < noOfIngredients; i++)
+                {
+                    Console.WriteLine(ingredientName[i] + " " + quantity[i] * 2  + " " + recipeUnitsofMeasure[i]);
+                }
+
+            }
+
+            else if (option2 == 3)
+            {
+                for (int i = 0; i < noOfIngredients; i++)
+                {
+                    Console.WriteLine(ingredientName[i] + " " + quantity[i] * 3 + " " + recipeUnitsofMeasure[i]);
+                }
+            }
         }
-            
-
         
     } 
     
