@@ -26,11 +26,10 @@ namespace POE_part1
                 Console.WriteLine("Enter the ingredients quantity");
                 quantity = Convert.ToInt32(Console.ReadLine());
 
-                Console.WriteLine("Select from the list below to add the measuring units the ingreadient needs");
-                Console.WriteLine("1. tsp");
-                Console.WriteLine("2.Tbsp");
+                Console.WriteLine("1. Tsp");
+                Console.WriteLine("2. Tbsp");
                 Console.WriteLine("3. Gram");
-                Console.WriteLine("4.  Kilogram ");
+                Console.WriteLine("4. Kilogram ");
                 Console.WriteLine("5. Cup");
                 Console.WriteLine("6. Millilitre ");
                 Console.WriteLine("7. Litre");
@@ -44,63 +43,64 @@ namespace POE_part1
                 Console.WriteLine("15. Diced");
                 Console.WriteLine("16. Large");
                 Console.WriteLine("17. Small");
-
+                Console.WriteLine();
+                    
+                Console.WriteLine("Select from the list below to add the measuring units the ingreadient needs");
                 recipeUnitsofMeasure = Convert.ToInt32(Console.ReadLine());
 
                 switch (recipeUnitsofMeasure)
                 //switch output will be based on users choice of measurement 
                 {
                     case 1:
-                        Console.WriteLine("tsp");
-
+                        Console.WriteLine(quantity + "tsp");
                         break;
                     case 2:
-                        Console.WriteLine("Tbsp");
+                        Console.WriteLine(quantity + "Tbsp");
                         break;
                     case 3:
-                        Console.WriteLine("Gram");
+                        Console.WriteLine(quantity + "Gram");
                         break;
                     case 4:
-                        Console.WriteLine(" Kilogram ");
+                        Console.WriteLine(quantity + "Kilogram ");
                         break;
                     case 5:
-                        Console.WriteLine("Cup");
+                        Console.WriteLine(quantity + "Cup");
                         break;
                     case 6:
-                        Console.WriteLine("Millilitre ");
+                        Console.WriteLine(quantity + "Millilitre ");
                         break;
                     case 7:
-                        Console.WriteLine("Litre");
+                        Console.WriteLine(quantity + "Litre");
                         break;
                     case 8:
-                        Console.WriteLine("Quart");
+                        Console.WriteLine(quantity + "Quart");
                         break;
                     case 9:
-                        Console.WriteLine("Pint");
+                        Console.WriteLine(quantity + "Pint");
                         break;
                     case 10:
-                        Console.WriteLine("Fl oz ");
+                        Console.WriteLine(quantity + "Fl oz ");
                         break;
                     case 11:
-                        Console.WriteLine("Ounce");
+                        Console.WriteLine(quantity + "Ounce");
                         break;
                     case 12:
-                        Console.WriteLine("Gal");
+                        Console.WriteLine(quantity + "Gal");
                         break;
                     case 13:
-                        Console.WriteLine("Pound");
+                        Console.WriteLine(quantity + "Pound");
                         break;
                     case 14:
-                        Console.WriteLine("Slices");
+                        Console.WriteLine(quantity + "Slices");
                         break;
                     case 15:
-                        Console.WriteLine("Diced");
+                        Console.WriteLine(quantity + "Diced");
                         break;
                     case 16:
-                        Console.WriteLine("Large");
+                        Console.WriteLine(quantity + "Large");
                         break;
                     case 17:
-                        Console.WriteLine("Small");
+                        Console.WriteLine(quantity + "Small");
                         break;
                 }
 
@@ -111,9 +111,12 @@ namespace POE_part1
 
             for (int b = 0; b < recipeSteps; b++)
             {
-                Console.WriteLine("Please enter your steps one by one in order");
+                Console.WriteLine("Step {0}" , b + 1);
+
                 string steps = Console.ReadLine();
             }
+
+            Console.ReadKey();  
         }
 
     }
