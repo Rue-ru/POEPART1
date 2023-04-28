@@ -10,7 +10,7 @@ namespace POE_part1
        public static int noOfIngredients;
        public static String[] ingredientName;
        public static int[] quantity;
-       public static int[] recipeUnitsofMeasure;
+       public static string[] recipeUnitsofMeasure;
        public static  String [] description = new String[recipeSteps];
 
         static void Main(string[] args)
@@ -53,70 +53,12 @@ namespace POE_part1
                 Console.WriteLine("17. Small");
                 Console.WriteLine();
 
-                recipeUnitsofMeasure = new int[noOfIngredients];
-                Console.WriteLine("Select from the list below to add the measuring units the ingreadient needs");
-                recipeUnitsofMeasure[i] = Convert.ToInt32(Console.ReadLine());
-
-                switch (recipeUnitsofMeasure[i])
-                //switch output will be based on users choice of measurement 
-                {
-                    case 1:
-                        Console.WriteLine(quantity[i] + "tsp");
-                        break;
-                    case 2:
-                        Console.WriteLine(quantity[i] + "Tbsp");
-                        break;
-                    case 3:
-                        Console.WriteLine(quantity[i] + "Gram");
-                        break;
-                    case 4:
-                        Console.WriteLine(quantity[i] + "Kilogram ");
-                        break;
-                    case 5:
-                        Console.WriteLine(quantity[i] + "Cup");
-                        break;
-                    case 6:
-                        Console.WriteLine(quantity[i] + "Millilitre ");
-                        break;
-                    case 7:
-                        Console.WriteLine(quantity[i] + "Litre");
-                        break;
-                    case 8:
-                        Console.WriteLine(quantity[i] + "Quart");
-                        break;
-                    case 9:
-                        Console.WriteLine(quantity[i] + "Pint");
-                        break;
-                    case 10:
-                        Console.WriteLine(quantity[i] + "Fl oz ");
-                        break;
-                    case 11:
-                        Console.WriteLine(quantity[i] + "Ounce");
-                        break;
-                    case 12:
-                        Console.WriteLine(quantity[i] + "Gal");
-                        break;
-                    case 13:
-                        Console.WriteLine(quantity[i] + "Pound");
-                        break;
-                    case 14:
-                        Console.WriteLine(quantity[i] + "Slices");
-                        break;
-                    case 15:
-                        Console.WriteLine(quantity[i] + "Diced");
-                        break;
-                    case 16:
-                        Console.WriteLine(quantity[i] + "Large");
-                        break;
-                    case 17:
-                        Console.WriteLine(quantity[i] + "Small");
-                        break;
-
-                        Steps();
-                        Display();
-
-                }
+                recipeUnitsofMeasure = new string[noOfIngredients];
+                Console.WriteLine("Looking at the list provided above, type out the quantity you want to use");
+                recipeUnitsofMeasure[i] = Console.ReadLine();
             }
+            Steps();
+            Display();
         }
 
         public static void Steps()
