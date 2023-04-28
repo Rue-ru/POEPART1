@@ -3,26 +3,27 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace POE_part1
 {
+    
     public class Program
     {
 
+       public static int noOfIngredients;
+
+       public static String[] ingredientName = new string[noOfIngredients];
+       public static int[] quantity = new int[noOfIngredients];
+       public static int[] recipeUnitsofMeasure = new int[noOfIngredients];
+
         static void Main(string[] args)
         {
-            int noOfIngredients;
-          
             Console.WriteLine("Enter the number of ingredients you would like to enter");
             noOfIngredients = Convert.ToInt32(Console.ReadLine());
-
-            String[] ingredientName = new string[noOfIngredients];
-            int [] quantity = new int [noOfIngredients];
-            int [] recipeUnitsofMeasure = new int [noOfIngredients];
 
             for (int i = 0; i < noOfIngredients; i++)
             {
 
                 Console.WriteLine("Enter the ingredients name with capital letters");
                 //enter the ingredients you want 
-                ingredientName[i]= Console.ReadLine();
+                ingredientName[i] = Console.ReadLine();
 
                 Console.WriteLine("Enter the ingredients quantity");
                 quantity[i] = Convert.ToInt32(Console.ReadLine());
@@ -45,9 +46,9 @@ namespace POE_part1
                 Console.WriteLine("16. Large");
                 Console.WriteLine("17. Small");
                 Console.WriteLine();
-                    
+
                 Console.WriteLine("Select from the list below to add the measuring units the ingreadient needs");
-                recipeUnitsofMeasure [i] = Convert.ToInt32(Console.ReadLine());
+                recipeUnitsofMeasure[i] = Convert.ToInt32(Console.ReadLine());
 
                 switch (recipeUnitsofMeasure[i])
                 //switch output will be based on users choice of measurement 
@@ -104,27 +105,42 @@ namespace POE_part1
                         Console.WriteLine(quantity + "Small");
                         break;
                 }
-
             }
 
-        }
-        public static void Steps()
-        {
             int recipeSteps;
-
-            Console.WriteLine("Enter the number of steps you would like to add");
-            recipeSteps = Convert.ToInt32(Console.ReadLine());
-
+            Console.WriteLine("Enter the number of steps you would like to add");  
+            recipeSteps = Convert.ToInt32(Console.ReadLine());  
+            
             String [] description = new String[recipeSteps];
-
             for (int b = 0; b < recipeSteps; b++)
             {
                 Console.WriteLine("Step {0}", b + 1);
                 description[b] = Console.ReadLine();
             }
+            
+            int option;
+                Console.WriteLine("Would you like display the entire recipe or clear the entire recipe out:");
+                Console.WriteLine("1 --> Display");
+                Console.WriteLine("2 --> Clear recipe");
+                 option = Convert.ToInt32(Console.ReadLine());
 
+            if (option == 1)
+            {
+
+            }
+            else if (option == 2)
+            {
+
+                Array.Clear();
+
+            }
+            
+            
             Console.ReadKey();
-        }
 
+
+            
+
+        } 
     }
 }
