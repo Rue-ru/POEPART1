@@ -57,6 +57,7 @@ namespace POE_part1
             }
             Steps();
             Display();
+            Adjust();
         }
 
         public static void Steps()
@@ -85,16 +86,18 @@ namespace POE_part1
             if (option == 1)
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
-                for(int i = 0; i < noOfIngredients; i++)
+
+                Console.WriteLine("INGREDIENTS");
+                for (int i = 0; i < noOfIngredients; i++)
                 {
                     Console.WriteLine(ingredientName[i] + " " + quantity[i] + " " + recipeUnitsofMeasure[i]);
                 }
-
+                
+                Console.WriteLine("\n METHOD");
                 for (int b = 0; b < recipeSteps; b++)
                 {
-                    Console.WriteLine("INGREDIENTS");    
+               
                     Console.WriteLine("Step {0}", b);
-                    Console.WriteLine("\n METHOD");
                     Console.WriteLine(description[b]);
                 }
                 Console.ResetColor();
