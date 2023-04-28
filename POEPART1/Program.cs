@@ -99,7 +99,10 @@ namespace POE_part1
             }
             else if (option == 2)
             {
-
+                Array.Clear(ingredientName, 0, ingredientName.Length);
+                Array.Clear(quantity, 0, quantity.Length);
+                Array.Clear(recipeUnitsofMeasure, 0, recipeUnitsofMeasure.Length);
+                Array.Clear(description, 0, description.Length);
 
             }
 
@@ -113,6 +116,7 @@ namespace POE_part1
             Console.WriteLine("1 --> half");
             Console.WriteLine("2 --> double");
             Console.WriteLine("3 --> triple");
+            Console.WriteLine("4 --> done");
             option2 = Convert.ToInt32(Console.ReadLine());
 
             if (option2 == 1)
@@ -120,6 +124,15 @@ namespace POE_part1
                 for (int i = 0; i < noOfIngredients; i++)
                 {
                     Console.WriteLine(ingredientName[i] + " " + quantity[i]/0.5 + " " + recipeUnitsofMeasure[i]);
+
+                }
+
+                for (int b = 0; b < recipeSteps; b++)
+                {
+                    Console.WriteLine("INGREDIENTS");
+                    Console.WriteLine("Step {0}", b);
+                    Console.WriteLine("\n METHOD");
+                    Console.WriteLine(description[b]);
                 }
 
             }
@@ -130,6 +143,14 @@ namespace POE_part1
                     Console.WriteLine(ingredientName[i] + " " + quantity[i] * 2  + " " + recipeUnitsofMeasure[i]);
                 }
 
+                for (int b = 0; b < recipeSteps; b++)
+                {
+                    Console.WriteLine("INGREDIENTS");
+                    Console.WriteLine("Step {0}", b);
+                    Console.WriteLine("\n METHOD");
+                    Console.WriteLine(description[b]);
+                }
+
             }
 
             else if (option2 == 3)
@@ -138,6 +159,18 @@ namespace POE_part1
                 {
                     Console.WriteLine(ingredientName[i] + " " + quantity[i] * 3 + " " + recipeUnitsofMeasure[i]);
                 }
+
+                for (int b = 0; b < recipeSteps; b++)
+                {
+                    Console.WriteLine("INGREDIENTS");
+                    Console.WriteLine("Step {0}", b);
+                    Console.WriteLine("\n METHOD");
+                    Console.WriteLine(description[b]);
+                }
+            }
+            else if (option2 ==4)
+            {
+                Console.ReadKey();
             }
         }
         
