@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
+
 namespace POE_part1
 {
     public class Program
@@ -7,24 +9,23 @@ namespace POE_part1
         static void Main(string[] args)
         {
             int noOfIngredients;
-            String ingredientName;
-            int quantity;
-            int recipeUnitsofMeasure;
-            int recipeSteps;
-            string description;
-
+          
             Console.WriteLine("Enter the number of ingredients you would like to enter");
             noOfIngredients = Convert.ToInt32(Console.ReadLine());
+
+            String[] ingredientName = new string[noOfIngredients];
+            int [] quantity = new int [noOfIngredients];
+            int [] recipeUnitsofMeasure = new int [noOfIngredients];
 
             for (int i = 0; i < noOfIngredients; i++)
             {
 
                 Console.WriteLine("Enter the ingredients name with capital letters");
                 //enter the ingredients you want 
-                ingredientName = Console.ReadLine();
+                ingredientName[i]= Console.ReadLine();
 
                 Console.WriteLine("Enter the ingredients quantity");
-                quantity = Convert.ToInt32(Console.ReadLine());
+                quantity[i] = Convert.ToInt32(Console.ReadLine());
 
                 Console.WriteLine("1. Tsp");
                 Console.WriteLine("2. Tbsp");
@@ -46,9 +47,9 @@ namespace POE_part1
                 Console.WriteLine();
                     
                 Console.WriteLine("Select from the list below to add the measuring units the ingreadient needs");
-                recipeUnitsofMeasure = Convert.ToInt32(Console.ReadLine());
+                recipeUnitsofMeasure [i] = Convert.ToInt32(Console.ReadLine());
 
-                switch (recipeUnitsofMeasure)
+                switch (recipeUnitsofMeasure[i])
                 //switch output will be based on users choice of measurement 
                 {
                     case 1:
@@ -106,17 +107,23 @@ namespace POE_part1
 
             }
 
+        }
+        public static void Steps()
+        {
+            int recipeSteps;
+            string description;
+
             Console.WriteLine("Enter the number of steps you would like to add");
             recipeSteps = Convert.ToInt32(Console.ReadLine());
 
             for (int b = 0; b < recipeSteps; b++)
             {
-                Console.WriteLine("Step {0}" , b + 1);
+                Console.WriteLine("Step {0}", b + 1);
 
                 string steps = Console.ReadLine();
             }
 
-            Console.ReadKey();  
+            Console.ReadKey();
         }
 
     }
